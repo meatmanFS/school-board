@@ -8,6 +8,8 @@
 
 namespace App;
 
+use Exception;
+
 
 class BoardService
 {
@@ -37,6 +39,9 @@ class BoardService
             case '2':
                 $board = new BoardCSMB($this->studentData['grades']);
                 break;
+        }
+        if (empty($board)) {
+            throw new Exception('Student not pass the board', 400 );
         }
         return $board;
     }

@@ -8,6 +8,7 @@
 
 namespace App;
 
+use Exception;
 
 class BoardCSM implements IBoard
 {
@@ -15,6 +16,9 @@ class BoardCSM implements IBoard
     protected $grades = [];
     public function __construct($grades)
     {
+        if (empty($grades)) {
+            throw new Exception('Student not pass the tests yet', 400);
+        }
         $this->grades = $grades;
     }
 

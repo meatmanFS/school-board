@@ -33,7 +33,7 @@ class Student
         $query =
             "SELECT 
                 students.id as id, students.name as name,
-                grades.grade as grade, grades.subject as subject,
+                grades.grade as grade,
                 board.boarType as boardType
             FROM students
             LEFT JOIN grades
@@ -59,10 +59,11 @@ class Student
             $studentData['id'] = $row['id'];
             $studentData['name'] = $row['name'];
             $studentData['boardType'] = $row['boardType'];
-            $studentData['grades'][] = [
-                'grade' => $row['grade'],
-                'subject' => $row['subject'],
-            ];
+            if (!empty($row['grade'])) {
+                $studentData['grades'][] = [
+                    'grade' => $row['grade'],
+                ];
+            }
         }
         return $studentData;
     }
