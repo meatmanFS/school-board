@@ -1,7 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
 use App\Database;
 use App\Student;
 use App\ResponseHandler;
