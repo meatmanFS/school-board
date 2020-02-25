@@ -1,0 +1,10 @@
+{
+    "name": "ivan/school-board",
+    "authors": [
+        {
+            "name": "meatmanFS",
+            "email": "ivan-mudrik@ukr.net"
+        }
+    ],
+    "require": {}
+}
