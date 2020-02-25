@@ -6,7 +6,9 @@
             "email": "ivan-mudrik@ukr.net"
         }
     ],
-    "require": {},
+    "require": {
+        "spatie/array-to-xml": "^2.11"
+    },
     "autoload": {
         "psr-4": {
             "App\\": "App/"
