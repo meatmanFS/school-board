@@ -41,7 +41,7 @@ class Database
             $this->connection = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->database, $this->user, $this->password);
             $this->connection->exec("set names utf8");
         }catch(PDOException $exception){
-            throw new Exception( "Connection error: " . $exception->getMessage());
+            throw new Exception( "Connection error: " . $exception->getMessage(), 500);
         }
 
         return $this->connection;
